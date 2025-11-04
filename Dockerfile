@@ -25,7 +25,10 @@ RUN mkdir -p ${SOFTDIR} && mkdir -p ${MODEL_DIR}
 ##     INSTALL SYS LIBS
 ##########################################################
 # - Install OS packages
-RUN apt-get update && apt-get install -y software-properties-common curl bzip2 unzip nano build-essential git fuse
+RUN apt-get update && apt-get install -y software-properties-common curl bzip2 unzip nano build-essential git fuse libgl1
+
+# - Install OpenMPI
+RUN apt-get update && apt-get install -y openmpi-bin libopenmpi-dev
 
 # - Install python & pip
 RUN apt-get install -y python3 python3-dev python3-pip
